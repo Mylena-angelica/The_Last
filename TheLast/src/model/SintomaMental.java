@@ -26,12 +26,11 @@ public class SintomaMental extends Sintoma {
 	 
 	 */	
 	
-	public SintomaMental(char tipo,String n,String d, Date c, Ciclo ci) {
+	public SintomaMental(String n,String d, Date c) {
 		this.nome = n;
-		this.cadastro= c;
-		this.tipo=tipo;
+		this.cadastro= c;		
 		this.descricao=d;
-		this.ciclos=ci;
+		
 	
 		
 				

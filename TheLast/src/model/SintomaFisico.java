@@ -24,13 +24,12 @@ public class SintomaFisico extends Sintoma {
 	 
 	 */	
 	
-	public SintomaFisico(char tipo,String n, String l, int i, Date c, Ciclo ci) {
+	public SintomaFisico(String n, String l,int i, Date c) {
 		this.nome = n;
 		this.local= l;
 		this.intensidade=i;
 		this.cadastro= c;
-		this.tipo=tipo;
-		this.ciclos=ci;
+		
 		
 		
 				

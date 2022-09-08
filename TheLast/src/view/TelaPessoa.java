@@ -71,11 +71,11 @@ public class TelaPessoa {
 				// Printa todas as infos da Pessoa
 				JOptionPane.showMessageDialog(listar,
 						"Seu nome : " + TelaLoging.usuariaLogada.getNome() +
-								"\nSua data de nascimento: " + TelaLoging.usuariaLogada.getDtNascimento() +
+								
 								"\nSeu email : " + TelaLoging.usuariaLogada.getEmail() +				
 								"\nSuaSenha : " + TelaLoging.usuariaLogada.getSenha() );
 				frame.dispose();
-				TelaMenu.main(null);
+				Menu.main(null);
 			}
 			
 		});

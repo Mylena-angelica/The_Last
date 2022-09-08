@@ -1,7 +1,9 @@
 package model;
 
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
 	 * Classe Ciclo simula o comportamento do ciclo menstrual e nela está agregado SintomaMental
@@ -14,20 +16,23 @@ import java.util.Date;
 
 public class Ciclo {
 	
-	
+	private final ArrayList<SintomaMental> mentais;
+	private final ArrayList<SintomaFisico> fisicos;
 	private Date dataInicioMenstruacao;
 	private Date dataFinalMenstruacao;
 	private int duracaoCiclo;
-	private int numero;
+	private String numero;
 	
 	
 	
 	
-	public Ciclo(Date i, Date f, int d, int n) {
+	public Ciclo(Date i, Date f, int d, String n) {
 		this.dataInicioMenstruacao = i;
 		this.dataFinalMenstruacao = f;
 		this.duracaoCiclo = d; 
 		this.numero=n;
+		this.fisicos=new ArrayList<>();
+		this.mentais = new ArrayList<>();
 		
 		}
 
@@ -69,16 +74,24 @@ public class Ciclo {
 
 
 
-	public int getNumero() {
+	public String getNumero() {
 		return numero;
 	}
 
 
 
-	public void setNumero(int numero) {
+	public void setNumero(String numero) {
 		this.numero = numero;
 	}
+	
+	public List<SintomaMental> getMentais() {
+		return mentais;
+	}
 
+	public List<SintomaFisico> getFisico() {
+		return fisicos;
+	}
+	
 
 
 	

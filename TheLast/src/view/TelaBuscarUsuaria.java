@@ -95,13 +95,13 @@ public class TelaBuscarUsuaria {
 					JOptionPane.showMessageDialog(check,
 							"Seu nome : " + TelaLoging.usuariaLogada.getNome() +
 									"\nSeu email : " + TelaLoging.usuariaLogada.getEmail() +
-									"\nSua data de nascimento : " + TelaLoging.usuariaLogada.getDtNascimento() +
+									
 									
 									"\nSenha : " + TelaLoging.usuariaLogada.getSenha());
 									
 				}
 				frame.dispose();
-				TelaMenu.main(null);
+				Menu.main(null);
 			}
 		});
 		check.setFont(new Font("Cambria", Font.PLAIN, 11));

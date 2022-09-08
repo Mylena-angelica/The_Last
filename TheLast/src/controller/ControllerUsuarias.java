@@ -22,10 +22,10 @@ public class ControllerUsuarias {
 	 * @param nome, emial, rg, cpf, tel e senha.
 	 * @return mensagem de erro se não passar nas verificações.
 	 */
-	public String verificaCadastro(String nome, String email, String dtNascimento, String senha) {
+	public String verificaCadastro(String nome, String email, String senha) {
 		String msgErro = "";
-		if (nome.length() == 0 || email.length() == 0 || dtNascimento.length() == 0				
-				|| senha.length() == 0) {
+		if (nome.length() == 0 || email.length() == 0 || 			
+				 senha.length() == 0) {
 			return null;
 		}
 		if (!validarNome(nome)) {
@@ -34,9 +34,7 @@ public class ControllerUsuarias {
 		if (!validarEmail(email)) {
 			msgErro += "Email invalido\n";
 		}
-		if (!validarDtNascimento(dtNascimento)) {
-			msgErro += "Data de nascimento invalida\n";
-		}
+		
 		
 		if (!validarSenha(senha)) {
 			msgErro += "Senha invalida\n";
@@ -44,10 +42,7 @@ public class ControllerUsuarias {
 		return msgErro;
 	}
 	
-	public  static void cadastrarCiclo(Pessoa p, int n, Date i, Date f, int d) {
-		Pessoa.getCiclos().add(new Ciclo(i,f,d, n));
-	}
-
+	
 	/**
 	 * Verifica a respota do nome do usuário. Faz as verificações:
 	 * (1) Se a resposta contém apenas letras.
@@ -77,24 +72,6 @@ public class ControllerUsuarias {
 		return verificar;
 	}
 
-	/**
-	 * Verifica a respota do rg do usuário. Faz as verificações:
-	 * (1) Se a resposta contém necessariamente 7 caracteres.
-	 * (2) Se a resposta contém apenas números.
-	 * @param rgValid
-	 * @return booleano verdadeiro ou falso.
-	 */
-	public boolean validarDtNascimento(String dtNascimentoValid) {
-		boolean verificar = true;
-		if (dtNascimentoValid.length() != 7) {
-			verificar = false;
-		}
-		if (!dtNascimentoValid.substring(0).matches("[0-31]/[1-12]/[1960-2012]*")) {
-			verificar = false;
-		}
-
-		return verificar;
-	}
 
 
 	/**

@@ -127,7 +127,7 @@ public class TelaLoging {
 					// login deu errado, refazer login
 				} else {
 					frame.dispose();
-					TelaMenu.main(null);
+					Menu.main(null);
 				}
 			}
 		});

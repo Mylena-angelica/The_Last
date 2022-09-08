@@ -8,14 +8,12 @@ import java.util.ArrayList;
  */
 public class Pessoa {
 	private String nome;
-	private String dtNascimento;
 	private String senha;
 	private String email;
 	private static ArrayList<Ciclo> ciclos = new ArrayList<>();
 
-	public Pessoa(String n, String d, String s, String e) {
+	public Pessoa(String n, String s, String e) {
 		nome = n;
-		dtNascimento=d;
 		senha = s;
 		email=e;
 		
@@ -41,13 +39,8 @@ public class Pessoa {
 
 	
 
-	public String getDtNascimento() {
-		return dtNascimento;
-	}
+	
 
-	public void setDtNascimento(String dtNascimento) {
-		this.dtNascimento = dtNascimento;
-	}
 
 	public String getEmail() {
 		return email;
@@ -67,10 +60,9 @@ public class Pessoa {
 	 * Atualiza os dados existentes para os dados editados.
 	 * @param nome, email, rg, cpf, senha, telefone
 	 */
-	public void editarDados(String n, String d, String s, String e) {
-		this.setNome(n);
-		this.setDtNascimento(d);
-		this.setSenha(d);
+	public void editarDados(String n,  String s, String e) {
+		this.setNome(n);	
+		this.setSenha(s);
 		this.setEmail(e);
 	
 	}

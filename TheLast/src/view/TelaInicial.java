@@ -81,7 +81,7 @@ public class TelaInicial {
 				Object src = e.getSource();
 				if (src == cadastro) {
 					frame.dispose();
-					TelaPessoa.main(null);
+					CadastrarPessoa.main(null);
 				}
 			}
 		});

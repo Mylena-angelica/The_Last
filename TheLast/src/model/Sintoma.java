@@ -12,8 +12,8 @@ import java.util.Date;
 public abstract class Sintoma {
 	protected Date cadastro;
 	protected String nome;
-	protected char tipo;
-	protected Ciclo ciclos;
+
+	
 	
 	
 	
@@ -36,14 +36,7 @@ public abstract class Sintoma {
 	}
 
 	
-	public char getTipo() {
-		return tipo;
-	}
-
-	public void setTipo(char tipo) {
-		this.tipo = tipo;
-	}
-
+	
 
 
 	public String getNome() {
@@ -56,11 +49,6 @@ public abstract class Sintoma {
 		this.nome = nome;
 	}
 
-
-
-	public Ciclo getCiclos() {
-		return ciclos;
-	}
 
 
 

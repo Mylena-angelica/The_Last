@@ -3,13 +3,13 @@ package view;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 
-import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JTextArea;
 import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 
+import controller.ControllerCiclo;
 import controller.ControllerRelatorio;
 
 import javax.swing.JScrollPane;
@@ -22,46 +22,32 @@ import java.awt.Font;
  * 
  * @author Eduardo Rodrigues
  */
-public class TelaRelatorio  {
-	
-	
-	private JButton buttonVoltar;
-	private JComboBox<Object> fieldCiclos;
+public class TelaRelatorio extends PadraoRelatorio {
+
+	private static final long serialVersionUID = -4020189813495152570L;
+	private JComboBox<Object> fieldCiclo;
 	private JTextArea fieldRelatorio;
-	private ControllerRelatorio controller;
+	private ControllerCiclo controller;
 	private JScrollPane scrollPane;
 
 	/**
 	 * Cria o panel com os campos para o relatorio.
 	 */
 	public TelaRelatorio() {
-		
+		super("Relatorio de cilos");
 
-		controller = new ControllerRelatorio();
-		
-
-		buttonVoltar = new JButton("Voltar");
-		buttonVoltar.addActionListener(this);
-		buttonVoltar.setForeground(new Color(153, 0, 0));
-		buttonVoltar.setBackground(Color.LIGHT_GRAY);
-		buttonVoltar.setFont(JCampos.FONT);
-		buttonVoltar.setBounds(657, 428, 119, 21);
-		add(buttonVoltar);
-
-		JLabel labelFundo = new JLabel("");
-		labelFundo.setBounds(0, 0, 830, 522);
-		labelFundo.setIcon(new ImageIcon(JRelatorios.class.getResource("/vision/images/iconScreen.png")));
-		add(labelFundo);
+		controller = new ControllerCiclo(this);
 
 		JLabel lblNewLabel = new JLabel("Escolha o ciclo");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setFont(Padrao.FONT);
 		lblNewLabel.setBounds(49, 135, 162, 21);
 		add(lblNewLabel);
 
-		fieldEstudio = new JComboBox<>();
-		fieldEstudio.addActionListener(this);
-		fieldEstudio.setBounds(71, 168, 113, 21);
-		add(fieldEstudio);
+		fieldCiclo = new JComboBox<>();
+		fieldCiclo.addActionListener(this);
+		fieldCiclo.setBounds(71, 168, 113, 21);
+		add(fieldCiclo);
 
 		scrollPane = new JScrollPane();
 		scrollPane.setBounds(221, 109, 512, 295);
@@ -75,15 +61,15 @@ public class TelaRelatorio  {
 		fieldRelatorio.setEditable(false);
 	}
 
-	public JComboBox<Object> getFieldEstudio() {
-		return fieldEstudio;
+	public JComboBox<Object> getFieldCiclo() {
+		return fieldCiclo;
 	}
 
 	public JTextArea getFieldRelatorio() {
 		return fieldRelatorio;
 	}
 
-	public RelatorioFilmesControl getController() {
+	public ControlllerCiclo getController() {
 		return controller;
 	}
 
